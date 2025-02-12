@@ -35,7 +35,8 @@ function App() {
             }}
           />
           </div>
-          <button className="review absolute bottom-5 right-5 bg-blue-300 px-4 py-1 rounded-lg font-semibold cursor-pointer hover:text-blue-600 hover:ring-2 ring-blue-500 text-center z-index-10 select-none"
+          <button className="review absolute bottom-5 right-5 bg-blue-300 px-4 py-1 rounded-lg font-semibold cursor-pointer hover:text-blue-600 hover:ring-2 ring-blue-500 text-center z-index-10 select-none disabled:opacity-50"
+          disabled={loading}
           onClick={async ()=>{
             setLoading(true)
             const res = await axios.post('http://localhost:3000/ai/get-review', {code})
