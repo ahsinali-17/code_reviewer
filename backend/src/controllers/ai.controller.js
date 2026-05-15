@@ -10,8 +10,8 @@ export const getReview = async (req, res) => {
    try{
     const review = await useGemini(code);
     console.log(review)
-    res.send(review)
+    return res.send(review)
    }catch(error){
-    res.status(500).json({message:error.message})
+    return res.status(500).json({message:error.message})
    }
 }
